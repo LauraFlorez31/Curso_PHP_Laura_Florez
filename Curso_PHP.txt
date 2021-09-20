@@ -1,0 +1,55 @@
+<?php
+$value = "User";
+setcookie("ID", $value, time() + (86400 * 15), '/'); 
+
+if(isset($_COOKIE["ID"])) {
+  echo "Value is: ". $_COOKIE["ID"];
+}
+?>
+<html>
+
+ <head>
+   <title> Curso_PHP </title>
+ </head>
+ <body>
+<?php include 'header.php'; ?>
+ <?php 
+    echo "<strong><h1> PlayStation Store </h1></strong>";
+   echo "<strong> Nuevos ahorros en PlayStation Store </strong>";
+   <p>Grandes descuentos, colecciones cuidadas y baratas de temporada en éxitos de PS5, PS4 y PS VR, todo en el mismo lugar.</p>
+$productos = array (
+ 
+   "disponibles" => array ("Ps5", "Spider-Man"),
+ 
+   "agotados" => array ("Ps4", "Resident Evil Village"),
+ 
+);
+
+do {
+    $i = 0;
+    $i++;
+   } while ($i < 5000);
+
+if(isset($_POST['text'])) {
+  $name = $_POST['text'];
+  $handle = fopen('names.txt', 'a');
+  fwrite($handle, $name."\n");
+  fclose($handle); 
+}
+?>
+<form method="post">
+  Name: <input type="text" name="text" /> 
+  <input type="submit" name="submit" />
+</form>
+class Consolas {
+  public $Ps4; 
+  public function speak() { //method
+    echo "Nuevos juegos a mitad de precio, solo por hoy"
+  }
+}
+
+ ?>
+
+  </body>
+
+</html>
